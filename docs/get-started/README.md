@@ -83,6 +83,44 @@ $docker build -t getting-started .
 编辑 src/static/app.js 之后，执行
 ```bash
 docker
+```
+
+然后替代
+
+```bash
+$docker stop <container-id>
+$docker rm <container-id>
+$docker run -dp 3000:3000 getting-started
+
+```
+
+# 3. 分享镜像/推送到库 (略过)
+
+# 持久化数据 Persist the DB
+
+文件系统
+
+看一下没有持久化的样子
+```bash
+## tail -f /dev/null 是为了让进程不退出
+$docker run debian bash -c "shut -i 1-1000 -n 1 -o /data.txt && tail -f /dev/null"
+## 不会看到 /data.txt / 实际上是另外一个实例
+$docker run -it debian ls /
+## 然后删除所有 debian
+```
+
+创建 volume &&  挂载
+
+```bash
+$docker volume create data_txt
+$docker run -v data_txt:/data debian bash -c "shuf -i 1-1000 -n 2 -o /data/ata.txt"
+## 会输出两行数字
+$docker run -v data_txt:/data debian bash -c "cat /data/ata.txt"
+```
+
+## 使用 bind mounts, 绑定加载
+
+
 
 ## 参考
 
