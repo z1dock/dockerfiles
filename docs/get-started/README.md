@@ -63,6 +63,12 @@ CMD ["node", "src/index.js"]
 
 ```
 
+编译
+
+```bash
+$docker build -t getting-started .
+```
+
 ### Dockerfile 命令
 
 |命令|含义|
@@ -72,6 +78,11 @@ CMD ["node", "src/index.js"]
 |WORKDIR|-|
 |CMD|run时执行|
 
+## update the application , 更新应用
+
+编辑 src/static/app.js 之后，执行
+```bash
+docker
 
 ## 参考
 
