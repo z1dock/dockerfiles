@@ -54,7 +54,8 @@ FROM base_image ## 第一句应该是继承某个镜像
 |EXPOSE|暴露端口|EXPOSE 80/tcp , EXPOSE 3306|-|
 |ENV|定义变量|ENV MY_NAME=jack|-|
 |ADD|添加文件(夹)|ADD src dest|instruction copies new files, directories or remote file URLs from <src> and adds them to the filesystem of the image at the path <dest>|
-|COPY|复制文件|
+|COPY|复制文件| `COPY .env /var/www/html/.env`|-|
+|VOLUME|文件卷|`VOLUME ["/var/www", "/var/log/apache2", "/etc/apache2"]`|-|
 
 ## 参考
 
