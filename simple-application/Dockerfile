@@ -3,7 +3,7 @@ FROM node:12-alpine
 
 RUN apk add --no-cache python2 g++ make
 WORKDIR /app
-COPY . .
+COPY app .
 # COPY app/package.json app/yarn.lock ./
 # COPY app/spec ./spec
 

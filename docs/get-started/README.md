@@ -120,6 +120,18 @@ $docker run -v data_txt:/data debian bash -c "cat /data/ata.txt"
 
 ## 使用 bind mounts, 绑定加载
 
+```bash
+$docker run -dp 3000:3000 -w /app -v "$(pwd)/app:/app" getting-started sh -c "yarn install && yarn run dev"
+$docker logs -f <container-id>
+
+
+```
+
+
+## 多容器应用 (multi-container apps)
+
+```bash
+$docker network create todo-app
 
 
 

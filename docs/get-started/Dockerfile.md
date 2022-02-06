@@ -56,6 +56,10 @@ FROM base_image ## 第一句应该是继承某个镜像
 |ADD|添加文件(夹)|ADD src dest|instruction copies new files, directories or remote file URLs from <src> and adds them to the filesystem of the image at the path <dest>|
 |COPY|复制文件| `COPY .env /var/www/html/.env`|-|
 |VOLUME|文件卷|`VOLUME ["/var/www", "/var/log/apache2", "/etc/apache2"]`|-|
+|USER <user>[:<group>]|很少用到，一般一个容器一个进程,都是root|USER nginx| instruction sets the user name (or UID) and optionally the user group (or GID) to use when running the image and for any|
+|WORKDIR /path/to/workdir|定义目录给 RUN,CMD,ENTRYPOINT,COPY,ADD|WORKDIR /app|The WORKDIR instruction sets the working directory for any RUN, CMD, ENTRYPOINT, COPY and ADD instructions that follow it in the Dockerfile|
+
+
 
 ## 参考
 
